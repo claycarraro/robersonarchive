@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Materials's List
+{% endblock %}
+
+{% block content %}
+  <section class="hero">
+        <img src="{% static 'database.png' %}" alt="Logo" class="logo" width="100px">
+            <h1>Materials's Database</h1>
+            <img src="{% static 'database.png' %}" alt="Logo" class="logo" width="100px">
+    </section>
+    {% if is_paginated %}
+    <div class="Paginator">
+      {% if page_obj.has_previous %}
+        <a class="btn"href="?page=1">First</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+       <h3>Scroll through the pages to see the collection</h3>
+        {% if page_obj.number == num %}
+          <a class="btn"href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3'%}
+          <a class="btn"href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn"href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+    </div>  
+  {% endif %}
+  <div class="row">
+    {% for material in object_list %}
+      <div class="box-1">
+        <img src="{{ material.m_pictures.url }}"class="card-img-top" >
+      <div class="card-body">
+      <h2 class="card-title">{{ material.name }}</h2>
+      <p class="card-text"><strong>ID:</strong> {{ material.id }}</p>
+      <p class="card-text"><strong>Archive ID:</strong> {{ material.archive_id }}</p>
+      <p class="card-text"><strong>Type of Material:</strong> {{ material.type_of_material }}</p>
+      <p class="card-text"><strong>Factory:</strong> {{ material.factory }}</p>
+      </div>
+      </div>
+    {% empty %}
+    <div class="col-12">
+        <p>No materials found.</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+

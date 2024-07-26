@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Database{% endblock %}
+
+{% block content %}
+<section class="hero">
+        <img src="{% static 'database.png' %}" alt="Logo" class="logo" width="100px">
+            <h1>Pigments's Database</h1>
+            <img src="{% static 'database.png' %}" alt="Logo" class="logo" width="100px">
+    </section>
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Are you looking for a specific color?">
+    <button class="btn" type="submit">Search</button>
+    <div id="results"></div>
+</div>
+
+
+    <div class="database-info">
+<p>This database has been created by compiling various pigments from the Roberson & Co. Archive along with other notable 19th-century examples. Interesting is to see how different colors and materials tell their own stories while also revealing the chemical compositions of their era. </p>
+<p>Continue exploring the category of your choice through the buttons below.</p>
+<a href="{% url 'pigment_list' %}" class="btn">Pigments</a>
+<a href="{% url 'material_list' %}" class="btn">Materials</a>
+
+    </div>
+</div>
+
+{% endblock %}

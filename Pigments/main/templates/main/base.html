@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Titolo della pagina{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/scripts.js' %}"></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'project' %}">Who we are</a>
+        <div class="dropdown">
+            <a href="{% url 'database' %}" class="dropbtn">Database</a>
+            <div class="dropdown-content">
+                <a href="{% url 'pigment_list' %}">Pigments</a>
+                <a href="{% url 'material_list' %}">Materials</a>
+                <a href="{% url 'curiosities' %}">Curiosities</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="{% url 'Digitaled' %}" class="dropbtn">Digital edition</a>
+            <div class="dropdown-content">
+                <a href="{% url 'cataloguede' %}">Catalogue</a>
+                <a href="{% url 'transcription' %}">Transcription</a>
+            </div>
+        </div>
+        <a href="{% url 'contacts' %}">Contacts</a>
+    </div>
+
+    <div class="content"; style="padding-bottom: 100px">
+        {% block content %}
+        <!-- Questo blocco sarà diverso per ogni pagina che pagine che estende base.html -->
+        {% endblock %}
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="{% static 'logo.png' %}" alt="Logo" class="footer-logo">
+        </div>
+    </footer>
+</body>
+</html>

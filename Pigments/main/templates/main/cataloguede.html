@@ -1,0 +1,123 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    Contact Us
+{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-image: url("{% static 'page.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+    }
+</style>
+<div class="contact-container">
+    <div class="contact-info">
+        <section class="hero">
+        <img src="{% static 'book.png' %}" alt="Logo" class="logo" width="100px">
+        <h1>Download the manuscript</h1>
+        <img src="{% static 'book.png' %}" alt="Logo" class="logo" width="100px">
+    </section>
+  </div>
+</div>
+ <div class="container">
+    <div class="gallery" id="image-gallery">
+    </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+// Directory contenente le immagini
+   const directory = "{% static 'Rectos/' %}";
+
+    const images = [
+"MS788-1993_coverfront.jpg",
+"MS788-1993_coverfrontwithrope.jpg",
+"MS788-1993_endpaperfront.jpg",
+"MS788-1993_2.jpg",
+"MS788-1993_3.jpg",
+"MS788-1993_7.jpg",
+"MS788-1993_8.jpg",
+"MS788-1993_9.jpg",
+"MS788-1993_10.jpg",
+"MS788-1993_14.jpg",
+"MS788-1993_15.jpg",
+"MS788-1993_16.jpg",
+"MS788-1993_17.jpg",
+"MS788-1993_18.jpg",
+"MS788-1993_19.jpg",
+"MS788-1993_20.jpg",
+"MS788-1993_21.jpg",
+"MS788-1993_22.jpg",
+"MS788-1993_24.jpg",
+"MS788-1993_29.jpg",
+"MS788-1993_32.jpg",
+"MS788-1993_33.jpg",
+"MS788-1993_36.jpg",
+"MS788-1993_51.jpg",
+"MS788-1993_52.jpg",
+"MS788-1993_55.jpg",
+"MS788-1993_57.jpg",
+"MS788-1993_58.jpg",
+"MS788-1993_61.jpg",
+"MS788-1993_62.jpg",
+"MS788-1993_63.jpg",
+"MS788-1993_64.jpg",
+"MS788-1993_68.jpg",
+"MS788-1993_69.jpg",
+"MS788-1993_72.jpg",
+"MS788-1993_73.jpg",
+"MS788-1993_74.jpg",
+"MS788-1993_75.jpg",
+"MS788-1993_79.jpg",
+"MS788-1993_81.jpg",
+"MS788-1993_82.jpg",
+"MS788-1993_83.jpg",
+"MS788-1993_84.jpg",
+"MS788-1993_85.jpg",
+"MS788-1993_86.jpg",
+"MS788-1993_87.jpg",
+"MS788-1993_95.jpg",
+"MS788-1993_100.jpg",
+"MS788-1993_101.jpg",
+"MS788-1993_102.jpg",
+"MS788-1993_103.jpg",
+"MS788-1993_111.jpg",
+"MS788-1993_112.jpg",
+"MS788-1993_114.jpg",
+"MS788-1993_115.jpg",
+"MS788-1993_coverback.jpg",
+"MS788-1993_coverbackwithrope.jpg",
+"MS788-1993_endpaperback.jpg",
+    ];
+
+const gallery = document.getElementById("image-gallery");
+
+    images.forEach((imageName, index) => {
+        const imageDiv = document.createElement("div");
+        imageDiv.classList.add("image");
+
+        const img = document.createElement("img");
+        img.src = directory + imageName;
+        img.alt = "Image " + (index + 1);
+
+        // Debug del percorso immagine
+        console.log("Image source:", img.src);
+
+        const downloadLink = document.createElement("a");
+        downloadLink.href = directory + imageName;
+        downloadLink.setAttribute("download", "");
+        downloadLink.classList.add("download-link");
+        downloadLink.textContent = "Download";
+
+        imageDiv.appendChild(img);
+        imageDiv.appendChild(downloadLink);
+
+        gallery.appendChild(imageDiv);
+    });
+});
+
+</script>
+    {% endblock %}

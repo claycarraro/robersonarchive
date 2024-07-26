@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+<h1>Project Page</h1>
+{% endblock %}
+
+
+{% block content %}
+<section class="hero">
+        <img src="{% static 'mm.png' %}" alt="Logo" class="logo" width="100px">
+            <h1>Who we are</h1>
+        <img src="{% static 'mm.png' %}" alt="Logo" class="logo" width="100px">
+    </section>
+<div class="overlay">
+    <section class="museum-section">
+        <div class="section-content">
+            <h2>The Fitzwilliam Museum, Cambridge</h2>
+            <p>TThe Fitzwilliam Museum, a prominent attraction for both locals and tourists, is known for its high-quality exhibitions, academic research, and robust education programs. As a large and high-profile university museum, it operates as a department of Cambridge University with significant autonomy, while its budget and administration are closely tied to the university.</p>
+
+            <p>An 'encyclopaedic museum,' the Fitzwilliam boasts collections accumulated over more than two centuries, covering a wide geographical and chronological range and including cultural artifacts, but not scientific or natural history materials. Founded in 1816 with a bequest from Viscount Fitzwilliam of Merrion, the museum's collection of antique manuscripts, books, and paintings rapidly grew through additional donations and bequests to both the University and the museum.</p>
+            <a href="https://fitzmuseum.cam.ac.uk" class="btn">Visit the site</a>
+            <br>
+            <br>
+            <img src="{% static 'museum-image.png' %}" alt="Fitzwilliam Museum Image" class="section-image">
+        </div>
+        </div>
+    </section>
+<br>
+<br>
+<br>
+    <section class="hki-section">
+        <div class="section-content">
+            <h2>Hamilton Kerr Institute, Cambridge</h2>
+            <p>The Hamilton Kerr Institute was founded in 1976 following recommendations from the Calouste Gulbenkian Foundation’s 1972 report on Painting Conservation Training. It received funding from several foundations including the Baring Foundation, Esmée Fairbairn Trust, Gulbenkian Foundation, Isaac Wolfson Foundation, Monument Trust, and Pilgrim Trust.
+            As a leading global hub for teaching and research in easel painting conservation, the Institute offers the Master of the Conservation of Easel Paintings program, blending academic instruction with intensive studio practice under University of Cambridge oversight.</p>
+            <p>Additionally, the Institute provides advanced internships in easel painting conservation lasting up to two years. These internships are designed for graduates of recognized conservation programs, offering practical studio experience and research opportunities.
+            Operating as part of the Fitzwilliam Museum, the Institute conducts conservation work on paintings and polychromy from its collections and provides services to external clients. Income generated supports Institute activities and enables student and intern projects supervised by experts.
+            Furthermore, the Institute conducts research on painting conservation techniques, materials, and methodologies. It disseminates findings through publications, seminars, and conferences, contributing to the advancement of conservation practices worldwide.</p>
+           <a href="https://www.hki.fitzmuseum.cam.ac.uk/" class="btn">visit the site</a>
+            <br>
+            <br>
+            <img src="{% static 'HKI.png' %}" alt="HKI image" class="section-image">
+        </div>
+    </section>
+<br>
+<br>
+<br>
+    <section class="archive-section">
+        <div class="section-content">
+            <h2>Roberson & Co. Archive</h2>
+            <p>Charles Roberson opened his first shop for artists' materials at 54 Long Acre, London, in the early 1800s, taking over from Henry Matley in 1819. Located near the Royal Academy Schools, the shop became a key supplier for artists. In 1828, Roberson and his assistant Thomas Miller became partners and moved to 51 Long Acre, but the partnership ended in 1840. The business continued at 99 Long Acre from 1853 and expanded to Piccadilly in 1890. As London’s center changed, Roberson closed both branches in 1937, moving to Camden and maintaining a presence through Medici Galleries. The company stayed in the Roberson family until the 1970s and went into liquidation in 1985. Cornelissen then acquired the name, continuing to produce materials under the Roberson brand.</p>
+             <p>In 1975, Roberson’s historical ledgers were moved to the Hamilton Kerr Institute for safekeeping and research. These ledgers, dating from 1815 to 1944, provide detailed insights into the company's operations and relationships with artists. The archive includes over three hundred ledgers, pigment samples, and other materials, making it the most extensive artists' colorman archive in the UK. This collection documents the materials and techniques used by prominent British artists of the 19th and 20th centuries. Despite their resistance to mechanization, Roberson & Co. offers a comprehensive view of traditional artists' materials and practices.</p>
+            <br>
+            <br>
+            <img src="{% static 'RArchive.png' %}" alt="Archive image" class="section-image">
+        </div>
+    </section>
+</div>
+{% endblock %}
+

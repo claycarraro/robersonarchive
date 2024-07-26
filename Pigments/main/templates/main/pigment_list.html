@@ -1,0 +1,63 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+  Pigments List
+{% endblock %}
+
+{% block content %}
+  <section class="hero">
+        <img src="{% static 'database.png' %}" alt="Logo" class="logo" width="100px">
+            <h1>Pigments's Database</h1>
+            <img src="{% static 'database.png' %}" alt="Logo" class="logo" width="100px">
+    </section>
+  <div class="row">
+    {% for pigment in object_list %}
+      <div class="box-1">
+          <img src="{{ pigment.bottle_picture.url }}"class="card-img-top" >
+          <div class="card-body">
+            <h2 class="card-title">{{ pigment.specific_name }}</h2>
+            <p class="card-text"><strong>ID:</strong> {{ pigment.id }}</p>
+            <p class="card-text"><strong>Archive ID:</strong> {{ pigment.archive_id }}</p>
+            <p class="card-text"><strong>Description:</strong> {{ pigment.description }}</p>
+            <p class="card-text"><strong>Color:</strong> {{ pigment.color }}</p>
+            <p class="card-text"><strong>Shade:</strong> {{ pigment.shade }}</p>
+            <p class="card-text"><strong>Stopper:</strong> {{ pigment.stopper }}</p>
+            <p class="card-text"><strong>Geographical Origins:</strong> {{ pigment.geographical_origins }}</p>
+            <p class="card-text"><strong>Date of Production:</strong> {{ pigment.date_of_production }}</p>
+            <p class="card-text"><strong>Chemical Composition:</strong> {{ pigment.chemical_composition }}</p>
+            <p class="card-text"><strong>Physical Properties:</strong> {{ pigment.physical_properties }}</p>
+            <p class="card-text"><strong>Archive Description:</strong> {{ pigment.archive_description }}</p>
+          </div>
+        </div>
+    {% empty %}
+    <div class="col-12">
+        <p>No materials found.</p>
+      </div>
+    {% endfor %}
+  </div>
+    {% if is_paginated %}
+    <div class="Paginator">
+      {% if page_obj.has_previous %}
+        <a class="btn"href="?page=1">First</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn"href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3'%}
+          <a class="btn"href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn"href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+    </div>  
+  {% endif %}
+{% endblock %}
+
+
+
+
+

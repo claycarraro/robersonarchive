@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    Contact Us
+{% endblock %}
+
+{% block content %}
+<div class="contact-container">
+    <div class="contact-info">
+        <section class="hero">
+        <img src="{% static 'contacts.png' %}" alt="Logo" class="logo" width="100px">
+        <h1>Contact Information</h1>
+        <img src="{% static 'contacts.png' %}" alt="Logo" class="logo" width="100px">
+    </section>
+        <p><strong>Address:</strong> Trumpington St, Cambridge CB2 1RB</p>
+        <p><strong>Email:</strong> <a href="">899071@stud.unive.it</a></p>
+        <p><strong>Phone:</strong> 01223 332900</p>
+        <div class="social-media">
+            <a href="{% static 'fb.png' %}" class="social-icon">Facebook</a>
+            <a href="{% static 'twitter.png' %}" class="social-icon">Twitter</a>
+            <a href="{% static 'ig.png' %}" class="social-icon">Instagram</a>
+        </div>
+    </div>
+
+    <h3>If there's anything specific you'd like to ask, please fill out this form, and we'll get back to you as soon as possible.</h3>
+
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

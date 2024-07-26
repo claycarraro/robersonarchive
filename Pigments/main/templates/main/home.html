@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="homepage">
+    <section class="hero">
+        <img src="{% static 'stickerpig.png' %}" alt="Logo" class="logo" width="100px">
+            <h1>Welcome to Pigments's homepage</h1>
+            <img src="{% static 'stickerpig.png' %}" alt="Logo" class="logo" width="100px">
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <h2>About Our Project</h2>
+            <p>Welcome to our project, inspired by the extensive collection of items donated to the Kerr Hamilton Institute by Roberson and Co. and other contributors. This collection serves as a comprehensive archive that vividly illustrates the manufacturing and painting industry of 19th-century England.
+            Our primary goal is to bring various elements of this archive to light, with a special focus on pigments. The collection includes over 300 vials filled with a diverse array of pigments and materials.
+            The purpose of this website is to showcase these elements, making them freely and easily accessible for exploration. We have created a digital edition of a manuscript where Charles Roberson and others documented their recipes for creating and composing pigments, as well as a database of many materials from the archive. This initiative is designed to be expandable, paving the way for future studies and discoveries in this fascinating field.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join Us in Preserving History</h2>
+            <p>We invite you to be a part of our journey in bringing the vibrant history of these pigments to life. Whether you’re an enthusiast, a researcher, or simply curious, there are numerous ways to get involved. Join our community to explore, learn, and contribute.</p>
+            <a href="{% url 'database' %}" class="btn">Explore Now</a>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+        

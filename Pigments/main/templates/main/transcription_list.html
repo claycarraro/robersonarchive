@@ -1,0 +1,79 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Database{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-image: url("{% static 'page.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+    }
+    info-box {
+        display: none; /* Initially hidden */
+        padding: 20px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        position: absolute;
+        z-index: 1000; 
+        width: 80%; 
+        left: 10%; 
+</style>
+<section class="hero">
+    <img src="{% static 'book.png' %}" alt="Logo" class="logo" width="100px">
+    <h1>Digital edition</h1>
+    <img src="{% static 'book.png' %}" alt="Logo" class="logo" width="100px">
+</section>
+<div class='container-de'>
+    <div class='column-left'>
+        {% for transcription in object_list %}
+            <h2>{{ transcription.ms_number }}</h2>
+            <h4>Page: {{ transcription.pagenumber}}</h4>
+            <img src="{{ transcription.image.url }}" width='600px'>
+        {% endfor %}
+    </div>
+    <div class="column-right">
+        <div class= "dinamic">
+         <a href="{% url 'curiosities'%}" class="btn">Go to curiosities</a>
+         <a href="{% url 'curiosities'%}" class="btn">BOH</a>
+         <a class="btn" onclick="toggleInfoBox()">Info box</a>
+            <div id="info-box" class="info-box">
+                <ul>
+                    <li> Linseed : alallalalalllalaalal </li>
+                    <li> Castille soap: alalalaalllalalalalalal</li>
+                </ul>
+            </div>
+        </div>
+        {% for transcription in object_list %}
+            <p>{{ transcription.transcription | safe }}</p>
+        {% endfor %}
+    </div>
+</div>
+    {% if is_paginated %}
+        <div class="Paginator">
+            {% if page_obj.has_previous %}
+                <a class="btn" href="?page=1">Front Cover</a>
+                <a class="btn" href="?page={{ page_obj.previous_page_number }}"> < </a>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+                <a class="btn" href="?page={{ page_obj.next_page_number }}"> > </a>
+                <a class="btn" href="?page={{ page_obj.paginator.num_pages }}">Back Cover</a>
+            {% endif %}
+        </div>  
+    {% endif %}
+    <script>
+    function toggleInfoBox() {
+        var infoBox = document.getElementById("info-box");
+        if (infoBox.style.display === "none" || infoBox.style.display === "") {
+            infoBox.style.display = "block";
+        } else {
+            infoBox.style.display = "none";
+        }
+    }
+</script>
+{% endblock %}

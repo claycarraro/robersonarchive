@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    Digital ed
+{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-image: url("{% static 'page.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+    }
+</style>
+<div class="container">
+<div class="contact-container">
+    <div class="contact-info">
+        <section class="hero">
+        <img src="{% static 'book.png' %}" alt="Logo" class="logo" width="100px">
+        <h1>Recipes manuscript from the R&Co. Archive</h1>
+        <img src="{% static 'book.png' %}" alt="Logo" class="logo" width="100px">
+        </section>
+    </div>
+</div>
+  <p>Scholarly editing has always been important in the humanities, including fields like literature, history, philosophy, and library science. Early scholars recognized that digital tools could transform how they conduct research, share their findings, and work together. Today, digital scholarly editing is a well-developed part of the Digital Humanities, but it still faces many challenges.</p>
+  <p>Our project aims to breathe new life into a 19th-century manuscript from the Robertson & Co. archive, which details various pigment recipes. This manuscript offers a unique glimpse into the historical experimentation with pigment compositions. The original authors meticulously recorded and revised their findings, striving to determine the optimal formulation for each pigment.
+
+  By digitizing this manuscript, we make these historical recipes accessible for analysis and research. This digital edition not only preserves the manuscript's contents but also provides an invaluable resource for scholars and researchers. The ease of access to this data facilitates in-depth study and offers new opportunities for understanding historical practices in pigment formulation. Through this project, we bridge the gap between past and present, enabling a broader audience to explore and benefit from these historical insights.</p>
+</div>
+<div class="">
+      <video width="520" height="520" controls>
+            <source src="https://www.youtube.com/watch?v=vQY3L9S1kmo" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+</div>
+{% endblock %}
